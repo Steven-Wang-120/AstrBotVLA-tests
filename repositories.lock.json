@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "release_final": false,
+  "status": "published-development-test-kit; pinned functional B04-B07 commits; not a certified release; combined regression pending",
+  "repositories": {
+    "ex": {
+      "url": "https://github.com/Steven-Wang-120/AstrbotEX",
+      "commit": "1f6e4a86f46e661e9a26d522d930fb036cdf156a",
+      "dirty_mode": "explicit --allow-dirty required for development even on pinned clean checkouts; always records noncertified identity, exact tree SHA and per-file SHA"
+    },
+    "aeb": {
+      "url": "https://github.com/Steven-Wang-120/A.E.B.",
+      "commit": "2e77eba61ad37d178f872805cbb7219104bb38fd",
+      "dirty_mode": "explicit --allow-dirty required for development even on pinned clean checkouts; always records noncertified identity, exact tree SHA and per-file SHA"
+    }
+  }
+}

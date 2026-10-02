@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+artifacts/
+task-evidence/
+*.log
+*.sqlite*
+*.db
+*.zip
+.env
+.env.*
+/build/
+/install/
+/log/

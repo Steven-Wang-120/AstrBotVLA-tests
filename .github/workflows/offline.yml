@@ -1,0 +1,72 @@
+name: Development smoke validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          path: validation
+          persist-credentials: false
+      - id: lock
+        name: Read exact functional commits
+        shell: pwsh
+        run: |
+          $lock = Get-Content validation/repositories.lock.json -Raw | ConvertFrom-Json
+          if ($lock.schema_version -ne 1) { throw 'Unsupported lock schema' }
+          foreach ($name in @('ex', 'aeb')) {
+            $repo = $lock.repositories.$name
+            if ($repo.commit -notmatch '^[0-9a-f]{40}$') { throw "Full commit required: $name" }
+            if ($repo.url -notmatch '^https://github.com/([^/]+/[^/]+)$') { throw "Invalid GitHub URL: $name" }
+            "$name-repository=$($Matches[1])" >> $env:GITHUB_OUTPUT
+            "$name-ref=$($repo.commit)" >> $env:GITHUB_OUTPUT
+          }
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: ${{ steps.lock.outputs.ex-repository }}
+          ref: ${{ steps.lock.outputs.ex-ref }}
+          path: ex
+          persist-credentials: false
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: ${{ steps.lock.outputs.aeb-repository }}
+          ref: ${{ steps.lock.outputs.aeb-ref }}
+          path: aeb
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install EX runtime dependencies only
+        run: python -m pip install -r ex/requirements.txt
+      - name: Development smoke validation — strict unit, offline and wiring evidence
+        shell: pwsh
+        run: |
+          # Development lock has release_final: false; --allow-dirty records noncertified identity even for pinned clean checkouts.
+          $failed = $false
+          foreach ($mode in @('ex-unit', 'offline', 'wiring')) {
+            python -B validation/run_validation.py $mode --ex-checkout ex --aeb-checkout aeb --allow-dirty
+            if ($LASTEXITCODE -ne 0) { $failed = $true }
+          }
+          if ($failed) { exit 1 }
+      - name: Preserve all attempts, including failures
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: validation-${{ matrix.os }}-py${{ matrix.python }}
+          path: validation/artifacts/
+          if-no-files-found: warn
+          retention-days: 14

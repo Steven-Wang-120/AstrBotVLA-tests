@@ -1,0 +1,345 @@
+{
+  "tasks": [
+    {
+      "category": "normal",
+      "goal_en": "Prepare, transform and finalize only public-item-01; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-01",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-01",
+      "variant": 0
+    },
+    {
+      "category": "normal",
+      "goal_en": "Prepare, transform and finalize only public-item-02; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-02",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-02",
+      "variant": 1
+    },
+    {
+      "category": "normal",
+      "goal_en": "Prepare, transform and finalize only public-item-03; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-03",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "healthy_preparation",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-03",
+      "variant": 2
+    },
+    {
+      "category": "normal",
+      "goal_en": "Prepare, transform and finalize only public-item-04; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-04",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "healthy_preparation",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-04",
+      "variant": 3
+    },
+    {
+      "category": "ambiguity",
+      "goal_en": "Prepare, transform and finalize only public-item-05; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-05",
+        "completed_item": null,
+        "failure": null,
+        "observation": "ambiguous",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-05",
+      "variant": 0
+    },
+    {
+      "category": "ambiguity",
+      "goal_en": "Prepare, transform and finalize only public-item-06; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-06",
+        "completed_item": null,
+        "failure": null,
+        "observation": "ambiguous",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-06",
+      "variant": 1
+    },
+    {
+      "category": "ambiguity",
+      "goal_en": "Prepare, transform and finalize only public-item-07; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-07",
+        "completed_item": null,
+        "failure": null,
+        "observation": "ambiguous",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-07",
+      "variant": 2
+    },
+    {
+      "category": "ambiguity",
+      "goal_en": "Prepare, transform and finalize only public-item-08; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-08",
+        "completed_item": null,
+        "failure": null,
+        "observation": "ambiguous",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-08",
+      "variant": 3
+    },
+    {
+      "category": "observation_failure",
+      "goal_en": "Prepare, transform and finalize only public-item-09; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-09",
+        "completed_item": null,
+        "failure": null,
+        "observation": "stale",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-09",
+      "variant": 0
+    },
+    {
+      "category": "observation_failure",
+      "goal_en": "Prepare, transform and finalize only public-item-10; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-10",
+        "completed_item": null,
+        "failure": null,
+        "observation": "stale",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-10",
+      "variant": 1
+    },
+    {
+      "category": "observation_failure",
+      "goal_en": "Prepare, transform and finalize only public-item-11; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-11",
+        "completed_item": null,
+        "failure": null,
+        "observation": "stale",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-11",
+      "variant": 2
+    },
+    {
+      "category": "observation_failure",
+      "goal_en": "Prepare, transform and finalize only public-item-12; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-12",
+        "completed_item": null,
+        "failure": null,
+        "observation": "missing",
+        "phase": "raw",
+        "running": null,
+        "stop_provable": true,
+        "stopped_proven": true,
+        "tick": 0
+      },
+      "task_id": "virtual-12",
+      "variant": 3
+    },
+    {
+      "category": "conflict",
+      "goal_en": "Prepare, transform and finalize only public-item-13; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-13",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "foreign_workspace_holder",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-13",
+      "variant": 0
+    },
+    {
+      "category": "conflict",
+      "goal_en": "Prepare, transform and finalize only public-item-14; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-14",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "foreign_workspace_holder",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-14",
+      "variant": 1
+    },
+    {
+      "category": "conflict",
+      "goal_en": "Prepare, transform and finalize only public-item-15; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-15",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "foreign_workspace_holder",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-15",
+      "variant": 2
+    },
+    {
+      "category": "conflict",
+      "goal_en": "Prepare, transform and finalize only public-item-16; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-16",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "foreign_workspace_holder",
+        "stop_provable": false,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-16",
+      "variant": 3
+    },
+    {
+      "category": "failure_recovery",
+      "goal_en": "Prepare, transform and finalize only public-item-17; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-17",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "failed_preparation",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-17",
+      "variant": 0
+    },
+    {
+      "category": "failure_recovery",
+      "goal_en": "Prepare, transform and finalize only public-item-18; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-18",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "failed_preparation",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-18",
+      "variant": 1
+    },
+    {
+      "category": "failure_recovery",
+      "goal_en": "Prepare, transform and finalize only public-item-19; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-19",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "failed_preparation",
+        "stop_provable": true,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-19",
+      "variant": 2
+    },
+    {
+      "category": "failure_recovery",
+      "goal_en": "Prepare, transform and finalize only public-item-20; prove stopped.",
+      "initial_state": {
+        "bound_item": "public-item-20",
+        "completed_item": null,
+        "failure": null,
+        "observation": "fresh",
+        "phase": "raw",
+        "running": "failed_preparation",
+        "stop_provable": false,
+        "stopped_proven": false,
+        "tick": 0
+      },
+      "task_id": "virtual-20",
+      "variant": 3
+    }
+  ],
+  "version": "b07-virtual-closed-loop-v2"
+}
