@@ -19,6 +19,8 @@ workspace/
   aeb/         # A.E.B at repositories.lock.json repositories.aeb.commit
 ```
 
+For portable clones, `.gitattributes` preserves raw frozen fixture bytes (`fixtures/** -text`), preventing Windows `core.autocrlf` from changing their hashes.
+
 Python 3.10 or 3.12 and Git are required. Install only EX's runtime dependencies:
 
 ```sh
