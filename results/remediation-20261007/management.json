@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "final-integrated-management-20261007/result.json",
+      "sha256": "fe106884557b4c8492b6f08de5cdeea3d76e20f3941252a2c963586e4643eb95"
+    }
+  ],
+  "scope": "synthetic owned HTTP, real RuntimeController, isolated software Actor; no model/ROS/robot",
+  "pass": true,
+  "checks": [
+    {
+      "name": "schema2 config, secret/CAS and save-only lifecycle preserved",
+      "pass": true
+    },
+    {
+      "name": "save did not start process, runtime, mode or Goal",
+      "pass": true
+    },
+    {
+      "name": "builtin fixed-wait HTTP inference without Goal/Action/runtime activation",
+      "pass": true
+    },
+    {
+      "name": "synthetic shadow choice did not dispatch or write Ledger action",
+      "pass": true
+    },
+    {
+      "name": "synthetic selection reached Actor and durable succeeded Ledger",
+      "pass": true
+    },
+    {
+      "name": "HTTP config and a new trusted backend instance cannot clear service-generation quarantine",
+      "pass": true
+    },
+    {
+      "name": "recover proved Actor stop and old process exit, installed fresh generation disabled, no old replay",
+      "pass": true
+    }
+  ],
+  "error_count": 0,
+  "software_actor_commands": 2,
+  "after_cleanup_service_state": "stopped"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "final-ros2-accepted-20261007/summary.json",
+      "sha256": "0ca3f9191ae18adf0c1f06978cefd55c8a159ed70f49e616c4d9f434b74e6719"
+    }
+  ],
+  "scope": "historical isolated ros2_echo lifecycle; no motion proof",
+  "exit_code": 0,
+  "runtime_after": "idle",
+  "domain_id": 73,
+  "only_example": "ros2_echo",
+  "elapsed_seconds": 1.956,
+  "http_thread_stopped": true
+}

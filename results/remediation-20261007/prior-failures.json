@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "final-native-20261007/summary.json",
+      "sha256": "3a5361e7d90df2fd631d9b78ee7fef4d4ea1c95faa0550a613539bc8284b2e73"
+    },
+    {
+      "name": "final-native-reviewed-20261007/summary.json",
+      "sha256": "88c95009382fe4733c8627c5a4bbed46f3f9bb9ad7269351ac111bbc46e519cf"
+    },
+    {
+      "name": "owned-port-baseline-red.log",
+      "sha256": "d4bfb297417ed1f7d29a49a25bcb3a95d5e7675c515986bfa08410625e6e428d"
+    },
+    {
+      "name": "snapshot-stop-race-linux-red.log",
+      "sha256": "7323c92252b178113e096f7e9df4f2817f492c930ae28c1c12585e2ec567022a"
+    },
+    {
+      "name": "snapshot-stop-race-windows-red.log",
+      "sha256": "d38068224d4245a1a463fa80b82bd404b14cc84f7fba79756854a182d00294ad"
+    }
+  ],
+  "prior_attempts": [
+    {
+      "name": "final-native-20261007",
+      "status": "failed",
+      "summary": {
+        "collected": 753,
+        "ran": 751,
+        "failures": [
+          "tests.test_decision_management_lifecycle.OwnedCredentialTests.test_key_rotation_after_exit_recreates_manager_and_uses_new_key_for_launcher_and_http",
+          "tests.test_decision_management_lifecycle.OwnedCredentialTests.test_restart_same_config_reinstalls_owned_generation_without_key_change"
+        ],
+        "errors": [],
+        "skipped": [
+          [
+            "setUpClass (tests.test_decision_aeb_replanning.HostToolAEBReplanningTests)",
+            "LLM-tool cases require installed Host public modules"
+          ]
+        ],
+        "successful": false
+      },
+      "sha256": "3a5361e7d90df2fd631d9b78ee7fef4d4ea1c95faa0550a613539bc8284b2e73"
+    },
+    {
+      "name": "final-native-reviewed-20261007",
+      "status": "failed",
+      "summary": {
+        "collected": 755,
+        "ran": 753,
+        "passed": 751,
+        "failures": [
+          "tests.test_backup.SnapshotActionFactsTest.test_unproven_admitted_running_and_unknown_restore_fail_closed_without_losing_resources"
+        ],
+        "errors": [
+          "tests.test_backup.SnapshotActionFactsTest.test_unproven_admitted_running_and_unknown_restore_fail_closed_without_losing_resources"
+        ],
+        "skipped": [
+          [
+            "setUpClass (tests.test_decision_aeb_replanning.HostToolAEBReplanningTests)",
+            "LLM-tool cases require installed Host public modules"
+          ]
+        ],
+        "class_skipped_cases": [
+          [
+            "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay",
+            "LLM-tool cases require installed Host public modules"
+          ],
+          [
+            "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools",
+            "LLM-tool cases require installed Host public modules"
+          ]
+        ],
+        "skipped_case_count": 2,
+        "accounted": 755,
+        "successful": false
+      },
+      "sha256": "88c95009382fe4733c8627c5a4bbed46f3f9bb9ad7269351ac111bbc46e519cf"
+    },
+    {
+      "name": "owned-port-baseline-red.log",
+      "status": "failed red regression evidence; not relabeled passing",
+      "case_labels": [
+        "test_key_rotation_after_exit_recreates_manager_and_uses_new_key_for_launcher_and_http (tests.test_decision_management_lifecycle.OwnedCredentialTests)",
+        "test_restart_same_config_reinstalls_owned_generation_without_key_change (tests.test_decision_management_lifecycle.OwnedCredentialTests)"
+      ],
+      "sha256": "d4bfb297417ed1f7d29a49a25bcb3a95d5e7675c515986bfa08410625e6e428d"
+    },
+    {
+      "name": "snapshot-stop-race-linux-red.log",
+      "status": "failed red regression evidence; not relabeled passing",
+      "case_labels": [
+        "test_async_uncertain_action_supersedes_restore_receipt_fail_closed (tests.test_backup.SnapshotActionFactsTest)"
+      ],
+      "sha256": "7323c92252b178113e096f7e9df4f2817f492c930ae28c1c12585e2ec567022a"
+    },
+    {
+      "name": "snapshot-stop-race-windows-red.log",
+      "status": "failed red regression evidence; not relabeled passing",
+      "case_labels": [
+        "test_async_uncertain_action_supersedes_restore_receipt_fail_closed (tests.test_backup.SnapshotActionFactsTest.test_async_uncertain_action_supersedes_restore_receipt_fail_closed)"
+      ],
+      "sha256": "d38068224d4245a1a463fa80b82bd404b14cc84f7fba79756854a182d00294ad"
+    }
+  ],
+  "limits": [
+    "Counts belong to their own source attempts; accepted reruns do not erase earlier failures.",
+    "Cleanup fault injection hit 40-second bound and required termination; only normal final browser cleanup passed."
+  ]
+}

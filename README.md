@@ -2,6 +2,10 @@
 
 Published **development test kit**, not a certified release, for [AstrBotEX](https://github.com/Steven-Wang-120/AstrbotEX) and [A.E.B](https://github.com/Steven-Wang-120/A.E.B.). It provides independent system, ROS and evaluation validation. Functional unit tests and their local helpers remain in their respective repositories; runtime code and frozen contracts are not owned here.
 
+## Remediation migration (2026-10-07)
+
+[PR-REMEDIATION-20261007](docs/PR-REMEDIATION-20261007.md) describes the bounded six-file EX harness migration and [sanitized historical acceptance](results/remediation-20261007/acceptance.json). These are separately identified remediation sources, **not** certification of this whole kit. The historical development lock and `release_final: false` remain unchanged. Product units and shared fixtures stay in EX; only six cross-repository replanning cases and independent drivers/helpers move here. See the report for portable commands, source hashes, platform skips and retained failures.
+
 ## Evidence status and known issues
 
 - The pinned functional B04–B07 production code previously passed the original Windows (443), ARM (443) and ROS (5) checks. That historical evidence **does not certify this new harness**.
@@ -47,7 +51,8 @@ python -B run_validation.py ex-offline --ex-checkout ../ex --aeb-checkout ../aeb
 | `ex-unit` | All retained EX `tests/test_*.py` classes defined in their own modules |
 | `offline` | Migrated evaluation tests (70) and runner-integrity tests (6, including real Actor/worker leak detection); live-driver tests use fake responses/loopback only |
 | `wiring` | Original 9 decision-wiring cases, using EX's retained fixture |
-| `ex-offline` | Union of the three collections, without imported fixture duplicates |
+| `replanning` | Six migrated C09 EX/A.E.B cases (four core + two requiring real Host public SDK); strict runner fails missing-SDK skips |
+| `ex-offline` | Original union of `ex-unit`, `offline` and `wiring`; standalone `replanning` is not included |
 | `host-unit` | Retained A.E.B units in an explicit local AstrBot Host image |
 | `host-integration` | Migrated real EX/A.E.B composition (9), ZMQ rejection boundaries and joint-helper cases |
 | `campaign` | Original finite P01–P09 campaign: 180 rounds / 340 case executions, fake provider/EX; **not real B04 combination** |
@@ -106,4 +111,4 @@ python -B -m validation_drivers.evaluate_jev_offline --ex-checkout ../ex --aeb-c
 
 Drivers also accept explicit `--artifacts-dir`; live-only helpers require explicit local credential-file arguments and explicit live opt-in. **Do not run paid models, read credentials, contact production or attach hardware as part of these checks.** Historical docs under `docs/` retain their original result numbers, limitations and archive references; old archives remain local, not bundled with this public repository. Jev is shadow-only; real NapCat delivery, TTS playback and mechanical stopping remain untested. Historical reports are not release-clean evidence for the split.
 
-Keep keys, raw logs, ZIPs, databases, caches and build outputs out of Git. Migration evidence (original repository/path → validation path, original and migrated SHA-256, plus original-ID coverage) is generated outside Git for coordinator review. The public repository carries portable code/docs/fixtures only. Publication, final lock updates and release-clean checks belong to the coordinator.
+Keep keys, raw logs, ZIPs, databases, caches and build outputs out of Git. Migration evidence (original repository/path → validation path, original and migrated SHA-256, plus original-ID coverage) is generated outside Git for coordinator review. The public repository carries portable code/docs/fixtures and allowlisted sanitized result derivatives only; raw evidence stays external. Publication, final lock updates and release-clean checks belong to the coordinator.

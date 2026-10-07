@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "scope": "bounded offline migration checks; not whole-kit or physical acceptance",
+  "checks": [
+    {
+      "name": "management",
+      "pass": true,
+      "check_count": 7,
+      "scope": "synthetic owned HTTP, real RuntimeController, isolated software Actor; no model/ROS/robot",
+      "evidence_sha256": "381e5bce26d03de2bf3f1e28b371b7e88352545a30b63b00c6f617f24b86341c"
+    },
+    {
+      "name": "fixture",
+      "pass": true,
+      "check_count": 17,
+      "scope": "C07 stage1: isolated frozen decision HTTP contract fixture + real EX neighboring pages. No supplier inference, activation, model process, Goal, Action or physical motion.",
+      "evidence_sha256": "8b79c20e81359d1aed0314e9aa8cea828d5ea6fbaace71bfb1cdcdde8cf61ee3"
+    },
+    {
+      "name": "actual",
+      "pass": true,
+      "check_count": 8,
+      "scope": "C07 experimental actual build_server HTTP + builtin production transports to loopback synthetic suppliers. No real Key/provider/hardware. C06 not final.",
+      "evidence_sha256": "4a35d3d24732be0d6f5542a7fce99a2283d7e81c0794fb59e72d5f0866673685"
+    },
+    {
+      "name": "replanning-final",
+      "pass": true,
+      "source_unchanged": {
+        "ex": true,
+        "aeb": true,
+        "host": true,
+        "validation": true
+      },
+      "cases": [
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_model_wait_at_threshold_keeps_goal_without_replanning_or_dispatch",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_request_replan_running_actor_stop_proof_and_lost_ack_idempotence",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_unknown_action_without_stop_proof_requires_review_and_never_replays",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_user_cancel_and_old_feedback_cannot_revive_or_advance_task",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools",
+          "status": "passed"
+        }
+      ],
+      "collected": 6,
+      "tests_run": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "thread_leaks": [],
+      "load_errors": [],
+      "duplicate_case_ids": [],
+      "evidence_sha256": "3191850dd08d5d50dc76c0121e7453630ca68cdfa108ad8d50de9d2f35a684ca",
+      "identity_limitation": "Earlier tracked-only audit omitted five functional untracked AEB files; preserved historical run, superseded by corrected complete identity below."
+    },
+    {
+      "name": "coordinator-review-fix",
+      "pass": true,
+      "evidence_sha256": "7956d2928739313f80af76a94686c916f6970cf43c251d53e4cd10b8921620a7",
+      "source_unchanged": {
+        "ex": true,
+        "aeb": true,
+        "host": true,
+        "validation": true
+      },
+      "cases": [
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_model_wait_at_threshold_keeps_goal_without_replanning_or_dispatch",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_request_replan_running_actor_stop_proof_and_lost_ack_idempotence",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_unknown_action_without_stop_proof_requires_review_and_never_replays",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_user_cancel_and_old_feedback_cannot_revive_or_advance_task",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay",
+          "status": "passed"
+        },
+        {
+          "id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools",
+          "status": "passed"
+        }
+      ],
+      "collected": 6,
+      "tests_run": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "thread_leaks": [],
+      "load_errors": [],
+      "duplicate_case_ids": [],
+      "guards": {
+        "original_historical_module_lists_exact": true,
+        "ex_offline_no_replanning_or_host_warmup": true,
+        "no_product_test_filename_filter": true,
+        "accepted_aeb_sources_in_identity_and_before_after": 13,
+        "accepted_untracked_sources": 5,
+        "unicode_tracked_paths_verified": 7,
+        "no_private_or_bytecode_content_reads": true,
+        "child_host_root_and_cwd_isolated_despite_unsafe_inherited_env": true,
+        "unsafe_inherited_directory_unchanged": true
+      }
+    }
+  ],
+  "cli_checks": [
+    {
+      "name": "diagnose_dispatcher_stress-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "verify_decision_management-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "decision_ui_fixture-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "decision_ui_real_fixture-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "runner-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "browser-help",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "browser-syntax",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "dispatcher-import",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "actual-missing-aeb",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "ok": true
+    },
+    {
+      "name": "management-output-in-ex",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "ok": true
+    },
+    {
+      "name": "management",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "browser-fixture",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "ok": true
+    },
+    {
+      "name": "browser-actual",
+      "exit_code": 1,
+      "expected_exit": 0,
+      "ok": false
+    }
+  ],
+  "prior_migration_attempts": [
+    {
+      "name": "browser-actual",
+      "pass": false,
+      "checks_completed": 5,
+      "reason": "selected Host Python lacks installed pyzmq; preserved; explicit installed dependency overlay rerun passed all 8",
+      "evidence_sha256": "cc7bfc48ab34c9eec738c88b5b782ae9ec736ce3da94eae25768c6f364f593a6"
+    },
+    {
+      "name": "replanning",
+      "pass": false,
+      "reason": "new suite missing explicit importlib.util import; repaired; strict reruns passed",
+      "evidence_sha256": "eb232f64f6485c7d51cce1bfc50b191eede0e9d053f15a23d584bafe99656b79"
+    },
+    {
+      "name": "actual-overlay-observer",
+      "pass": false,
+      "reason": "observer used locale GBK to read UTF-8 result and failed after browser CLI exited 0; browser result itself passed 8 checks",
+      "command_evidence_sha256": "7eea2d4bd5bf0ad0502d04df1f52898d4cd87bc98862e06ca14a659ede292360"
+    }
+  ],
+  "retained_unit_helper_count": 73,
+  "retained_unit_helpers_unchanged": true,
+  "lock_unchanged": true,
+  "broken_direct_doc_links": 0,
+  "case_assertions_ast_unchanged": true,
+  "notes": [
+    "Management/browser evidence binds its recorded source hashes; no combined full suite, campaign, model, network-provider, hardware, or ROS rerun.",
+    "Observed actual browser requires pyzmq in explicitly selected Python environment; no automatic dependency discovery/install.",
+    "Full original1000 stress diagnostic only import-checked here; scale/assertions unchanged.",
+    "Final review/staging/commit/push are coordinator work.",
+    "Coordinator review fix: original ex-offline composition restored, complete AEB functional dirty identity, isolated replanning Host root/cwd. One six-case rerun; prior 7/17/8 management/browser runs not repeated."
+  ]
+}

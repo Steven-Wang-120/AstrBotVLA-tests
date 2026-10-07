@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "jev-live-no-action-20261006.json",
+      "sha256": "240cb5c847fade84b90b0600497f45e240ad62e47e1d823f8001a7afed220850"
+    }
+  ],
+  "scope": "previously authorized single wait-only live probe; not rerun by migration",
+  "status": "passed",
+  "model": "jev-1.13.0",
+  "max_retries": 0,
+  "execution_allowed": false,
+  "goal_submitted": false,
+  "action_dispatched": false,
+  "source_sha256": "8d558f3e3feca638358782419aba35c36a117f4774f3e44866f16e4bc8bca361",
+  "probe": {
+    "ok": true,
+    "health_ok": null,
+    "inference_ok": true,
+    "inference_called": true,
+    "error_code": null,
+    "restart_required": false
+  },
+  "request_record": {
+    "input_sha256": "9c1fc447a4df312dc9867116e52a503f013a89982be87250b4983a6a2dfd5957",
+    "attempts": 1,
+    "input_tokens": 688,
+    "output_tokens": 28,
+    "conservative_overrides": 0
+  }
+}

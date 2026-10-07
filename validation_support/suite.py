@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import importlib
+import importlib.util
 import json
 import os
 import sys
@@ -49,6 +50,8 @@ def modules_for(mode):
         return evaluation + ['validation_tests.test_harness_integrity']
     if mode == 'wiring':
         return ['validation_tests.integration.test_decision_wiring']
+    if mode == 'replanning':
+        return ['validation_tests.integration.test_decision_aeb_replanning']
     if mode == 'ex-offline':
         return modules_for('ex-unit') + modules_for('offline') + modules_for('wiring')
     if mode == 'host-unit':
@@ -89,7 +92,7 @@ from validation_support.host_lifecycle import framework_baseline, thread_leaks
 def run(mode, output):
     baseline = set(threading.enumerate())
     framework = None
-    if mode in ('host-unit', 'host-integration'):
+    if mode in ('host-unit', 'host-integration') or (mode == 'replanning' and importlib.util.find_spec('astrbot') is not None):
         baseline, framework = framework_baseline()
     result = None
     cases = []

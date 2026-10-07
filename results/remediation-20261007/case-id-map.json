@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scope": "six migrated C09 cases; class/helper bodies and assertions AST-identical",
+  "cases": [
+    {
+      "original_id": "tests.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_request_replan_running_actor_stop_proof_and_lost_ack_idempotence",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_request_replan_running_actor_stop_proof_and_lost_ack_idempotence"
+    },
+    {
+      "original_id": "tests.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_model_wait_at_threshold_keeps_goal_without_replanning_or_dispatch",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_model_wait_at_threshold_keeps_goal_without_replanning_or_dispatch"
+    },
+    {
+      "original_id": "tests.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_user_cancel_and_old_feedback_cannot_revive_or_advance_task",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_user_cancel_and_old_feedback_cannot_revive_or_advance_task"
+    },
+    {
+      "original_id": "tests.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_unknown_action_without_stop_proof_requires_review_and_never_replays",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.PurePythonAEBReplanningTests.test_unknown_action_without_stop_proof_requires_review_and_never_replays"
+    },
+    {
+      "original_id": "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools"
+    },
+    {
+      "original_id": "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay",
+      "new_id": "validation_tests.integration.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay"
+    }
+  ]
+}

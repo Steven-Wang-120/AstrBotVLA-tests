@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "FINAL-ACCEPTANCE-20261007.json",
+      "sha256": "3dfc72b3b778cf8530ce4dad305f4aad26b13b92abbe1d3e6a12820ac2148a7e"
+    }
+  ],
+  "historical_reviewed_at": "2026-10-07T12:48:37.563845+08:00",
+  "counts": {
+    "windows": {
+      "collected": 757,
+      "ran": 757,
+      "passed": 756,
+      "failures": [],
+      "errors": [],
+      "skipped": [
+        [
+          "tests.test_owned_laya.OwnedLayaTests.test_clean_owned_exit_with_tcp_time_wait_allows_same_port_restart",
+          "Linux TCP TIME_WAIT and /proc proof"
+        ]
+      ],
+      "class_skipped_cases": [],
+      "skipped_case_count": 1,
+      "accounted": 757,
+      "successful": true
+    },
+    "linux": {
+      "collected": 757,
+      "ran": 755,
+      "passed": 755,
+      "failures": [],
+      "errors": [],
+      "skipped": [
+        [
+          "setUpClass (tests.test_decision_aeb_replanning.HostToolAEBReplanningTests)",
+          "LLM-tool cases require installed Host public modules"
+        ]
+      ],
+      "class_skipped_cases": [
+        [
+          "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_low_confidence_retired_feedback_then_llm_replans_suffix_without_prefix_replay",
+          "LLM-tool cases require installed Host public modules"
+        ],
+        [
+          "tests.test_decision_aeb_replanning.HostToolAEBReplanningTests.test_three_real_successes_advance_only_current_goal_via_llm_tools",
+          "LLM-tool cases require installed Host public modules"
+        ]
+      ],
+      "skipped_case_count": 2,
+      "accounted": 757,
+      "successful": true
+    },
+    "aeb_independent_passed": 164,
+    "browser_checks": 8,
+    "fixture_checks": 17,
+    "management_checks": 7
+  },
+  "ros_runtime_after": "idle",
+  "physical_motion_exercised": false,
+  "production_deployed": false,
+  "whole_test_kit_certified": false,
+  "limits": [
+    "Native Host SDK absent: two cases covered on Windows, skipped on Linux.",
+    "Linux /proc socket regression skipped on Windows, passed on Linux.",
+    "One previously authorized real Jev wait-only probe; no repeated key call, physical motion or actual Laya GPU validation.",
+    "Host public reply deduplication applies to supported buffered path; not delivery guarantee or arbitrary third-party sends.",
+    "Port preflight is not reservation; existing Windows reusable wildcard listener semantics remain.",
+    "Cleanup fault injection hit 40-second bound and needed termination; normal final browser cleanup passed."
+  ],
+  "prior_failures_retained": [
+    "final-native-20261007",
+    "final-native-reviewed-20261007",
+    "owned-port-baseline-red.log",
+    "snapshot-stop-race-linux-red.log",
+    "snapshot-stop-race-windows-red.log"
+  ],
+  "historical_authorized_removed_artifacts": 109,
+  "historical_evidence_retained_externally": true
+}

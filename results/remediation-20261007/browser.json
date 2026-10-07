@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "final-integrated-browser-20261007/result.json",
+      "sha256": "1aaaae77e3a79064a0133aed0bc8363524ed3be09854e1a78427eabee69b913a"
+    }
+  ],
+  "scope": "C07 experimental actual build_server HTTP + builtin production transports to loopback synthetic suppliers. No real Key/provider/hardware. C06 not final.",
+  "pass": true,
+  "checks": [
+    {
+      "name": "actual HTTP rejects anonymous read/write; fresh provider selection required",
+      "pass": true
+    },
+    {
+      "name": "actual jev ephemeral draft probe no-save; key/config save; production start/stop",
+      "pass": true
+    },
+    {
+      "name": "actual laya ephemeral draft probe no-save; key/config save; production start/stop",
+      "pass": true
+    },
+    {
+      "name": "actual Laya health200 inference401 not success; management auth preserved",
+      "pass": true
+    },
+    {
+      "name": "actual CAS409 preserves draft and requires explicit review",
+      "pass": true
+    },
+    {
+      "name": "actual AEB projection handler bidirectional ZMQ + nested EX capabilities: scoped idle",
+      "pass": true
+    },
+    {
+      "name": "actual TaskStore summary on browser, no plan/identity leakage; disconnect unavailable",
+      "pass": true
+    },
+    {
+      "name": "actual secrets absent DOM URL/storage and reload forgets admin",
+      "pass": true
+    }
+  ],
+  "error_count": 0,
+  "side_effects": {
+    "goal": false,
+    "pending_goal": false,
+    "actions": 0,
+    "history": 0,
+    "runtime": "idle",
+    "mode": "disabled"
+  },
+  "cleanup": {
+    "fixture_process": {
+      "terminated": true,
+      "exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "forced_kill": false
+    },
+    "chrome_process": {
+      "terminated": true,
+      "exit_code": null,
+      "signal": "SIGTERM"
+    },
+    "profile_cleanup": {
+      "removed": true,
+      "ownership_verified": true
+    },
+    "fixture": {
+      "ok": true,
+      "resources": [
+        {
+          "resource": "projection.connection",
+          "ok": true
+        },
+        {
+          "resource": "projection.channel",
+          "ok": true
+        },
+        {
+          "resource": "projection.task_store",
+          "ok": true
+        },
+        {
+          "resource": "projection.loop_stop",
+          "ok": true
+        },
+        {
+          "resource": "projection.thread",
+          "ok": true
+        },
+        {
+          "resource": "projection.loop_close",
+          "ok": true
+        },
+        {
+          "resource": "projection.source_hashes",
+          "ok": true
+        },
+        {
+          "resource": "projection",
+          "ok": true
+        },
+        {
+          "resource": "http.shutdown",
+          "ok": true
+        },
+        {
+          "resource": "http.thread",
+          "ok": true
+        },
+        {
+          "resource": "http.server_close",
+          "ok": true
+        },
+        {
+          "resource": "supplier.0.shutdown",
+          "ok": true
+        },
+        {
+          "resource": "supplier.0.server_close",
+          "ok": true
+        },
+        {
+          "resource": "supplier.0.thread",
+          "ok": true
+        },
+        {
+          "resource": "supplier.1.shutdown",
+          "ok": true
+        },
+        {
+          "resource": "supplier.1.server_close",
+          "ok": true
+        },
+        {
+          "resource": "supplier.1.thread",
+          "ok": true
+        },
+        {
+          "resource": "source_hashes",
+          "ok": true
+        },
+        {
+          "resource": "temporary_directory",
+          "ok": true
+        }
+      ]
+    }
+  },
+  "product_source_sha256": {
+    "astrbot_ex/core/api_server.py": "0599b7b0c0fe187e7fcc083750148d032abe5786aabba285817c4c2301be3da6",
+    "astrbot_ex/core/decision/management.py": "6555eb544162e4805e513d816b3a7afad4c0bcbe3084ec0e3455616ede20fee6",
+    "astrbot_ex/core/decision/service.py": "fcd40bf5c00967d8ef31f0fc95c44fe41e9d1cc9b337e42ab13c798a533d5831",
+    "astrbot_ex/core/decision/controller.py": "4525f9ab386ffc68237984ce8024840b33925e9d93a864d753cfc2d86380792b",
+    "astrbot_ex/core/decision/config.py": "52a2ae44cc4afd4fd4ad8a6915e9b2125ee402facbb93604bba5692d496d86ef",
+    "astrbot_ex/core/actions/dispatcher.py": "a1360502b6613d07ccdc61f0ec2ce19d0d4205e67e3d5ee2887993a35d25a048",
+    "astrbot_ex/core/connection_manager.py": "5f75a32cb113a8df35baa981c3f117e7695c7ec6de65912db2527b516a287e22",
+    "astrbot_ex/core/decision_transport.py": "cd9f85b290cec2d973c5e9c6766faa625c48410054fd2fc503fc90b6acc7e7dc",
+    "astrbot_ex/core/decision/backends/jev.py": "8d558f3e3feca638358782419aba35c36a117f4774f3e44866f16e4bc8bca361",
+    "astrbot_ex/core/decision/backends/laya.py": "5c02aa74372d0c541ca52774753f8d384ac8373f580a8a07d7faec22de1ebbaf",
+    "dashboard/app.js": "1a33465e373cab5edf9a30302daa055189e9da7aacbb65e46e9207680c35c9d3",
+    "dashboard/decision.js": "1e6cf4d9bed0aad5efd8852e2d0f5dc0be2eb638f2edcca86f3bf4be0ec67ca9",
+    "dashboard/index.html": "30260dd253ffd98981b17cc9e876170fc93ead6ce7fbca12293c4d30cca1b2dd",
+    "dashboard/styles.css": "100747e3c83afab5a040b6e58179c9c77ad93109ea6a3c9996d7df9ebc0570f4"
+  },
+  "aeb_source_sha256": {
+    "host_tasks.py": "65f298fe656d3482750a26943a9e23309bf3bac6545ba87bcae60f71c5977cda",
+    "main.py": "95e386545e6426bbeb0ca51a3dc3edd1daa1bb237223653ba4b59a28b64c5e23",
+    "output_router.py": "668a1fabba8cdace75b2e05bb5ff01bcec506b85b80a12d54f41415229ba8977",
+    "planning_tools.py": "e143a9938584a58fccaa1839787fb23f7328b65368a5ef7f885578ea6572a04c",
+    "task_contracts.py": "887b45d71de032b536592319b18e52d17aa60d2ca2fa60dfdb15c77778bfdf80",
+    "task_coordinator.py": "dfbd2f6b878ef5c155eb878a5a8534a6a3ef294d1744028d0f7b3eed84842f43",
+    "task_models.py": "8d892bdd3210a07f735c9ea71237efbaa5b0cd3735e2e72648ec8d6a4ee76dbb",
+    "task_store.py": "03e635761abb321f3b33580297a180639ca0d84df3a8c6ed781834f05c31614f",
+    "zmq_transport.py": "473596b77690e1ef22bcbf04b662b388be3ebf23d130d598ad6957ca05ce2b01",
+    "__init__.py": "be00587ba54ba0af249919199e6036130e62ef53fb677185cbb7f1c542cf1a7d"
+  }
+}

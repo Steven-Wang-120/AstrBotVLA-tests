@@ -50,6 +50,59 @@ def verify_lock(lock_path, roots, allow_dirty=False):
             'repositories': identities}
 
 
+UNTRACKED_SOURCE_ROOTS = {'astrbot_ex', 'astrbot_plugin_astrbotex_interaction', 'astrbot',
+                          'tests', 'scripts', 'dashboard'}
+UNTRACKED_SOURCE_SUFFIXES = {'.py', '.js', '.mjs', '.css', '.html', '.md'}
+PRIVATE_SOURCE_PARTS = {'data', 'cache', 'secrets', 'credentials', 'runtime', 'logs'}
+
+
+def git_paths(root, *args):
+    result = subprocess.run(['git', '-C', str(root), 'ls-files', '-z', *args],
+                            capture_output=True, check=False)
+    if result.returncode:
+        raise ValueError('checkout_git_identity_unavailable')
+    return [name.decode('utf-8', errors='surrogateescape')
+            for name in result.stdout.split(b'\0') if name]
+
+
+def tracked_snapshot(root):
+    """Tracked source plus allowlisted untracked functional code; no private data."""
+    root = Path(root).resolve()
+    names = set(git_paths(root, '--cached'))
+    for name in git_paths(root, '--others', '--exclude-standard'):
+        path = Path(name)
+        if path.parts[0] in UNTRACKED_SOURCE_ROOTS and path.suffix in UNTRACKED_SOURCE_SUFFIXES:
+            names.add(name)
+    hashes = {}
+    for name in sorted(names):
+        path = Path(name)
+        parts = {part.casefold() for part in path.parts}
+        if (EXCLUDES.intersection(parts) or PRIVATE_SOURCE_PARTS.intersection(parts)
+                or path.name.casefold().startswith('.env')
+                or any(marker in path.stem.casefold() for marker in ('credential', 'api_key', 'access_token'))
+                or path.suffix.casefold() in {'.pyc', '.pyo', '.db', '.sqlite', '.sqlite3', '.log', '.pem', '.key'}):
+            continue
+        source = root / path
+        if source.is_file() and source.resolve().is_relative_to(root):
+            hashes[name] = hashlib.sha256(source.read_bytes()).hexdigest()
+    return hashes
+
+
+def remediation_identity(lock_path, roots):
+    """Record explicit current trees, without altering/claiming the historical lock."""
+    lock = json.loads(Path(lock_path).read_text(encoding='utf-8'))
+    identities = {}
+    for name, root in roots.items():
+        hashes = tracked_snapshot(root)
+        status = git(root, 'status', '--porcelain', '--untracked-files=all')
+        identities[name] = {'commit': git(root, 'rev-parse', 'HEAD'), 'dirty': bool(status),
+                            'status': status, 'files': hashes,
+                            'tree_sha256': hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest()}
+    return {'release_final': False, 'allow_dirty': True, 'certified_locked_clean_release': False,
+            'source_kind': 'explicit remediation development trees; not historical pinned acceptance',
+            'historical_lock': lock, 'repositories': identities}
+
+
 def output_path(path, roots, validation):
     target = Path(path).resolve()
     for root in roots.values():

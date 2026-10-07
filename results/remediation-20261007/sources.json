@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "FINAL-ACCEPTANCE-20261007.json",
+      "sha256": "3dfc72b3b778cf8530ce4dad305f4aad26b13b92abbe1d3e6a12820ac2148a7e"
+    },
+    {
+      "name": "aeb-c05-final-coordinator-review.json",
+      "sha256": "fc89c175fb270d555ff4070a67b7047d6767801f9849cbe0922569eb01911c9b"
+    }
+  ],
+  "ex": {
+    "commit_at_migration": "b2e8dddb36a6e3bab52607a09db66669d8afd5df",
+    "branch": "integration/laya-b08-b09-ros",
+    "remediation_base": "531b7c9a4feef93599a51f5565fe65e7a98bcc38",
+    "clean_before_migration": true,
+    "historical_acceptance_was_uncommitted": true
+  },
+  "aeb": {
+    "commit": "2e77eba61ad37d178f872805cbb7219104bb38fd",
+    "branch": "codex/c05-chat-routing-20261006",
+    "dirty": true,
+    "reviewed_source_sha256": {
+      "astrbot_plugin_astrbotex_interaction/main.py": "95e386545e6426bbeb0ca51a3dc3edd1daa1bb237223653ba4b59a28b64c5e23",
+      "astrbot_plugin_astrbotex_interaction/task_coordinator.py": "dfbd2f6b878ef5c155eb878a5a8534a6a3ef294d1744028d0f7b3eed84842f43",
+      "astrbot_plugin_astrbotex_interaction/task_store.py": "03e635761abb321f3b33580297a180639ca0d84df3a8c6ed781834f05c31614f",
+      "astrbot_plugin_astrbotex_interaction/tests/test_output_isolation.py": "336c2b25c88e2bf8430e4b1654f2023276f442d0102d6ef1eecca7214ef5d43b",
+      "astrbot_plugin_astrbotex_interaction/tests/test_plugin_channels.py": "7cdcb53f0ea19fcd90140f0438bc294da81c92eca481a93785764bcfda79c5a6",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_admission.py": "56e184bdb8ff32f7477d84f37ef859322d1cba6b1b3779d995ddd850a90e7b5e",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_coordinator.py": "1174b8fc1dd111b3bd4a660e24c389742e54aa6f220eba69308f6bd4e6fdfc10",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_turn_sync.py": "8965b23c107894fbea87c2ea21c7296b68e42b4fd7a29d9f4990f95cca438935",
+      "astrbot_plugin_astrbotex_interaction/host_tasks.py": "65f298fe656d3482750a26943a9e23309bf3bac6545ba87bcae60f71c5977cda",
+      "astrbot_plugin_astrbotex_interaction/tests/test_chat_tasks.py": "851c4ee0ac791532359db3c63979b928e92bccb801f31cdbeb168f6cee6cc4a5",
+      "astrbot_plugin_astrbotex_interaction/tests/test_decision_replan.py": "8e37297ba5941d288485c1c8e0fe628336f66187cc1c5b8079f045eaabd58fcd",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_chat_routing.py": "5c0b3bd87fb066ffd822f5d3efe8baed518d65c1fd25ab1b745168908a6256ff",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_foundation.py": "b8ce0d92ca0bb008eb739080e5439f9dafd5057a1b95f817e2fbc0af3f16f55d"
+    },
+    "dirty_file_sha256_at_migration": {
+      "astrbot_plugin_astrbotex_interaction/main.py": "95e386545e6426bbeb0ca51a3dc3edd1daa1bb237223653ba4b59a28b64c5e23",
+      "astrbot_plugin_astrbotex_interaction/task_coordinator.py": "dfbd2f6b878ef5c155eb878a5a8534a6a3ef294d1744028d0f7b3eed84842f43",
+      "astrbot_plugin_astrbotex_interaction/task_store.py": "03e635761abb321f3b33580297a180639ca0d84df3a8c6ed781834f05c31614f",
+      "astrbot_plugin_astrbotex_interaction/tests/test_output_isolation.py": "336c2b25c88e2bf8430e4b1654f2023276f442d0102d6ef1eecca7214ef5d43b",
+      "astrbot_plugin_astrbotex_interaction/tests/test_plugin_channels.py": "7cdcb53f0ea19fcd90140f0438bc294da81c92eca481a93785764bcfda79c5a6",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_admission.py": "56e184bdb8ff32f7477d84f37ef859322d1cba6b1b3779d995ddd850a90e7b5e",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_coordinator.py": "1174b8fc1dd111b3bd4a660e24c389742e54aa6f220eba69308f6bd4e6fdfc10",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_turn_sync.py": "8965b23c107894fbea87c2ea21c7296b68e42b4fd7a29d9f4990f95cca438935"
+    },
+    "review_fix_audited_source_sha256": {
+      "astrbot_plugin_astrbotex_interaction/main.py": "95e386545e6426bbeb0ca51a3dc3edd1daa1bb237223653ba4b59a28b64c5e23",
+      "astrbot_plugin_astrbotex_interaction/task_coordinator.py": "dfbd2f6b878ef5c155eb878a5a8534a6a3ef294d1744028d0f7b3eed84842f43",
+      "astrbot_plugin_astrbotex_interaction/task_store.py": "03e635761abb321f3b33580297a180639ca0d84df3a8c6ed781834f05c31614f",
+      "astrbot_plugin_astrbotex_interaction/tests/test_output_isolation.py": "336c2b25c88e2bf8430e4b1654f2023276f442d0102d6ef1eecca7214ef5d43b",
+      "astrbot_plugin_astrbotex_interaction/tests/test_plugin_channels.py": "7cdcb53f0ea19fcd90140f0438bc294da81c92eca481a93785764bcfda79c5a6",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_admission.py": "56e184bdb8ff32f7477d84f37ef859322d1cba6b1b3779d995ddd850a90e7b5e",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_coordinator.py": "1174b8fc1dd111b3bd4a660e24c389742e54aa6f220eba69308f6bd4e6fdfc10",
+      "astrbot_plugin_astrbotex_interaction/tests/test_task_turn_sync.py": "8965b23c107894fbea87c2ea21c7296b68e42b4fd7a29d9f4990f95cca438935",
+      "astrbot_plugin_astrbotex_interaction/host_tasks.py": "65f298fe656d3482750a26943a9e23309bf3bac6545ba87bcae60f71c5977cda",
+      "astrbot_plugin_astrbotex_interaction/tests/test_chat_tasks.py": "851c4ee0ac791532359db3c63979b928e92bccb801f31cdbeb168f6cee6cc4a5",
+      "astrbot_plugin_astrbotex_interaction/tests/test_decision_replan.py": "8e37297ba5941d288485c1c8e0fe628336f66187cc1c5b8079f045eaabd58fcd",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_chat_routing.py": "5c0b3bd87fb066ffd822f5d3efe8baed518d65c1fd25ab1b745168908a6256ff",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_foundation.py": "b8ce0d92ca0bb008eb739080e5439f9dafd5057a1b95f817e2fbc0af3f16f55d"
+    },
+    "review_fix_functional_untracked_files": [
+      "astrbot_plugin_astrbotex_interaction/host_tasks.py",
+      "astrbot_plugin_astrbotex_interaction/tests/test_chat_tasks.py",
+      "astrbot_plugin_astrbotex_interaction/tests/test_decision_replan.py",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_chat_routing.py",
+      "astrbot_plugin_astrbotex_interaction/tests/test_host_foundation.py"
+    ],
+    "review_fix_identity_before_after_all_13_included_unchanged": true
+  },
+  "historical_source_archive_sha256_reference_only": "dce6d3f64b4403c6bf42dfe8b7dc4626678feaaceb39cfc13c16902f63482aaf",
+  "lock_policy": "repositories.lock.json remains historical development baseline unchanged; release_final=false; remediation is a separately identified source set, not whole-kit certification",
+  "source_audit_policy": "Remediation tracked + explicit root/suffix-allowlisted untracked functional source, NUL Git paths; private data/credentials/bytecode excluded. Historical pinned collection/lock unchanged."
+}

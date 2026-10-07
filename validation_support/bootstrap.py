@@ -13,6 +13,7 @@ def bootstrap():
     # Inherit them via PYTHONPATH/env for multiprocessing and child CLIs.
     options = {"--ex-checkout": "ASTRBOTEX_TEST_CHECKOUT",
                "--aeb-checkout": "ASTRBOTEX_TEST_AEB_CHECKOUT",
+               "--host-checkout": "ASTRBOTVLA_TEST_HOST_CHECKOUT",
                "--artifacts-dir": "ASTRBOTVLA_ARTIFACTS",
                "--cc-switch-db": "ASTRBOTVLA_CC_SWITCH_DB",
                "--jev-key-file": "ASTRBOTVLA_JEV_KEY_FILE"}
@@ -30,13 +31,16 @@ def bootstrap():
                 if i >= len(sys.argv):
                     raise ValueError(key + " requires an explicit path")
                 value = sys.argv[i]
+            if not value or value.startswith('--'):
+                raise ValueError(key + " requires an explicit path")
             os.environ[options[key]] = str(Path(value).resolve())
         else:
             remaining.append(arg)
         i += 1
     sys.argv[:] = remaining
     for env, marker in (("ASTRBOTEX_TEST_CHECKOUT", "astrbot_ex/core/api_server.py"),
-                        ("ASTRBOTEX_TEST_AEB_CHECKOUT", "astrbot_plugin_astrbotex_interaction/main.py")):
+                        ("ASTRBOTEX_TEST_AEB_CHECKOUT", "astrbot_plugin_astrbotex_interaction/main.py"),
+                        ("ASTRBOTVLA_TEST_HOST_CHECKOUT", "astrbot/core/agent/message.py")):
         value = os.environ.get(env)
         if value:
             root = Path(value)
@@ -49,13 +53,13 @@ def bootstrap():
     if str(ROOT) not in sys.path:
         sys.path.insert(0, str(ROOT))
     paths = [str(ROOT)] + [os.environ[e] for e in
-             ("ASTRBOTEX_TEST_CHECKOUT", "ASTRBOTEX_TEST_AEB_CHECKOUT") if os.environ.get(e)]
+             ("ASTRBOTEX_TEST_CHECKOUT", "ASTRBOTEX_TEST_AEB_CHECKOUT", "ASTRBOTVLA_TEST_HOST_CHECKOUT") if os.environ.get(e)]
     os.environ["PYTHONPATH"] = os.pathsep.join(dict.fromkeys(paths +
                                    os.environ.get("PYTHONPATH", "").split(os.pathsep)))
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     sys.dont_write_bytecode = True
     artifacts = Path(os.environ.get("ASTRBOTVLA_ARTIFACTS", str(ROOT / "artifacts"))).resolve()
-    for env in ("ASTRBOTEX_TEST_CHECKOUT", "ASTRBOTEX_TEST_AEB_CHECKOUT"):
+    for env in ("ASTRBOTEX_TEST_CHECKOUT", "ASTRBOTEX_TEST_AEB_CHECKOUT", "ASTRBOTVLA_TEST_HOST_CHECKOUT"):
         if os.environ.get(env) and artifacts.is_relative_to(Path(os.environ[env]).resolve()):
             raise ValueError("artifacts must be outside functional checkouts")
     if artifacts.is_relative_to(ROOT) and not artifacts.is_relative_to(ROOT / "artifacts"):

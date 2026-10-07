@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "derivation": "sanitized allowlisted derivative, not a byte-identical copy",
+  "original_evidence": [
+    {
+      "name": "c07-final-reviewable-fixture/result.json",
+      "sha256": "2bcf97875c789396f6469f78788b2d3dabc66988b7b2dc94355754db484306a1"
+    }
+  ],
+  "scope": "C07 stage1: isolated frozen decision HTTP contract fixture + real EX neighboring pages. No supplier inference, activation, model process, Goal, Action or physical motion.",
+  "pass": true,
+  "checks": [
+    {
+      "name": "empty / invalid admin credential; no implicit writes",
+      "pass": true
+    },
+    {
+      "name": "minimal two cards, no internal panels, pinned models, idle versus unavailable",
+      "pass": true
+    },
+    {
+      "name": "full config save preserves hidden defaults and references; blank key keep",
+      "pass": true
+    },
+    {
+      "name": "Laya external auth and owned explicit deployment, no invented defaults",
+      "pass": true
+    },
+    {
+      "name": "draft test once; no persistence; health 200 + inference 401 not success",
+      "pass": true
+    },
+    {
+      "name": "draft success is not saved verification; edits fence late test results",
+      "pass": true
+    },
+    {
+      "name": "poll protects draft; CAS review preserves edits without blind retry",
+      "pass": true
+    },
+    {
+      "name": "business 409 distinct from CAS; stop reachable inside dirty modal",
+      "pass": true
+    },
+    {
+      "name": "EX start uses execute; no optimistic running; stop during activation",
+      "pass": true
+    },
+    {
+      "name": "explicit secret clear only selected provider",
+      "pass": true
+    },
+    {
+      "name": "task real title/goal/progress/status; safe text; no stale task on disconnect",
+      "pass": true
+    },
+    {
+      "name": "Escape discard only when dirty; focus restore; native modal contains focus",
+      "pass": true
+    },
+    {
+      "name": "credentials + session fence held reads, drafts require review; management 401 vs 403",
+      "pass": true
+    },
+    {
+      "name": "route-not-found view truthful; configuration error does not remove safety stop",
+      "pass": true
+    },
+    {
+      "name": "timeout retains draft and stop; no blind replay",
+      "pass": true
+    },
+    {
+      "name": "390px page/modal no horizontal overflow; pointer controls and owned modal stop reachable",
+      "pass": true
+    },
+    {
+      "name": "hidden/navigation pauses reads; other page draft intact; storage/URL never contain keys",
+      "pass": true
+    }
+  ],
+  "error_count": 0,
+  "side_effects": {
+    "goal": false,
+    "actions": 0,
+    "runtime": "idle"
+  },
+  "cleanup": {
+    "fixture_process": {
+      "terminated": true,
+      "exit_code": 0,
+      "signal": null,
+      "timed_out": false,
+      "forced_kill": false
+    },
+    "chrome_process": {
+      "terminated": true,
+      "exit_code": null,
+      "signal": "SIGTERM"
+    },
+    "profile_cleanup": {
+      "removed": true,
+      "ownership_verified": true
+    }
+  }
+}
